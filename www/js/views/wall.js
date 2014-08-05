@@ -60,7 +60,7 @@ function readPost(count){
         success: function (data, status) {
 
             for(var comment in data){
-                var author = data[comment].author;
+                var author = dataType[comment].author;
                 var date = data[comment].created_at;
                 var message = data[comment].body;
 

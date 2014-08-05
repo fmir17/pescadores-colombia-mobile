@@ -11,7 +11,7 @@ Spinner Lab's Development Team.
 */
 
 // Local Variables
-var bannerResources = "http://pescadores-colombia-api.spinnerlabs.co/image";
+var bannerResources = "http://pescadores-colombia-api.herokuapp.com/image";
 
 // Functions
 // This function is called when de page is loading. It's in charge of initializing the setting of the ajax called, the slider and the main properties of the page.
@@ -107,4 +107,43 @@ function initializeSliderProperties(){
 			tickerHover: false
 		});
 	});
+}
+
+function validation(){
+
+	var name = $("#name").val()
+	var password = $("#password").val()
+	
+  	uri = "http://pescadores-colombia-api.herokuapp.com/user/validation"
+    var validation=  {     
+        name: name ,
+        password: password,
+    };
+
+
+    $.ajax({
+        url: uri,
+        type: "POST",
+        data: validation,
+        success: function (data) {
+
+            var answer = data.answer;            
+            
+            if(answer == "true"){
+          
+            /// si la validacion es correcta, muestra el menú
+            window.location.href = "login.html";
+          
+            }else{
+              
+          	  window.alert("Usuario y contraseña invalidos");
+          	  window.location.href = "home.html";
+
+            }
+
+        },
+        error: function (status, jqXHR, data) {
+            alert('Fallo llamado ajax ' + data+jqXHR+status);
+        }
+    });
 }
