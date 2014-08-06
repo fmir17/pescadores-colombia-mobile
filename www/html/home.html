@@ -32,16 +32,16 @@
                 </article>
             </div>
             <div data-role="footer" data-position="bottom" class = "footer" id = "footer">
-                <a href="#inicio" data-role="button" data-transition="slideup" data-inline="true" class="fade_button" id = "login_button" >Log In</a> 
+                <a href="#login" data-role="button" data-transition="slideup" data-inline="true" class="fade_button" id = "login_button" >Log In</a> 
 
-                <a href="signup.html" data-role="button" data-transition="slideup" data-inline="true" data-theme="g" class="fade_button" id = "signup_button" rel="external">Sign Up</a>
+                <a href="#signup" data-role="button" data-transition="slideup" data-inline="true" data-theme="g" class="fade_button" id = "signup_button" >Sign Up</a>
 
-                <a href="javascript:reload();" data-role="button" data-transition="slideup" data-inline="true" data-theme="g" class="fade_button" id = "try_again_button" rel="external">Try Again</a>
+                <a href="javascript:reload();" data-role="button" data-transition="slideup" data-inline="true" data-theme="g" class="fade_button" id = "try_again_button" >Try Again</a>
             </div>
         </div>
 
 
-    <div data-role="page" id="inicio">
+    <div data-role="page" id="login">
  
         <!--header -->
         <header data-role="header" class = "header"> &nbsp;
@@ -65,6 +65,43 @@
         </div>
          
     </div>
+
+    <div data-role="page" id="signup">
+            <div data-role="header"class = "header"> &nbsp;
+                <h1 class="ui-title">Crea tu cuenta!</h1>               
+            </div>
+            <a data-role="button" data-icon="back" class="ui-btn-left" data-iconpos="notext" href="home.html" rel="external"></a>
+
+            <div data-role="content" >
+                
+
+                <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <strong>Nombre:</strong>
+                        </div>
+                        <div class="ui-block-b">
+                            <input type="text" id="nameInput" value="" placeholder="¿Cómo te llamas?!"  />
+                        </div>
+                        <div class="ui-block-a">
+                            <strong>Email:</strong>
+                        </div>
+                        <div class="ui-block-b">
+                            <input type="text" id="emailInput" value="" placeholder="¿Cuál es tu correo?"  />
+                        </div>
+                        <div class="ui-block-a">
+                            <strong>Password:</strong>
+                        </div>
+                        <div class="ui-block-b">
+                            <input type="password" id="passwordInput" value="" placeholder="Escribí tu contraseña!"  />
+                        </div>
+                </div>
+
+                <form action="javascript:authentication();" method="post">
+                <input type="submit" value="Registrar" id="botonLogin">
+                </form>
+
+            </div>
+        </div>
 
 
     </body>

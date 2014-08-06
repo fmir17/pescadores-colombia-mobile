@@ -48,7 +48,6 @@ function readPost(count){
 
 	var uri = "http://pescadores-colombia-api.herokuapp.com/wall/"+count;
 
-
     //var uri = "http://localhost:5050/wall/"+count;
 
     $.ajax({
@@ -60,10 +59,10 @@ function readPost(count){
         success: function (data, status) {
 
             for(var comment in data){
-                var author = dataType[comment].author;
+                
+                var author = data[comment].author;
                 var date = data[comment].created_at;
                 var message = data[comment].body;
-
                 var new_message = buildMessage(author,date,message);
                 $('#wall').append(new_message);
             }
@@ -91,11 +90,12 @@ function buildMessage(author, date, message)
 }
 
 function post(){
-    var name = "USUARIO EN SESION";
+
+    var author = String(window.localStorage.getItem("user"));
     var message = $('#newComment').val();
     var date = new Date();
 
-    var messageBody = {author: name, body: message};
+    var messageBody = {author: author, body: message};
     var uri = "http://pescadores-colombia-api.herokuapp.com/wall";
 
     $.ajax({
@@ -104,7 +104,7 @@ function post(){
         data: messageBody,
 
         success: function (data) {
-            var new_message = buildMessage(name,date,message);
+            var new_message = buildMessage(author,date,message);
             $('#body-section').prepend(new_message);
         },
         error: function (status) {

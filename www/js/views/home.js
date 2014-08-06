@@ -130,8 +130,9 @@ function validation(){
             var answer = data.answer;            
             
             if(answer == "true"){
-          
-            /// si la validacion es correcta, muestra el menú
+            window.localStorage.clear();
+            window.localStorage.setItem("user",name);
+            var userName = window.localStorage.getItem("user");
             window.location.href = "login.html";
           
             }else{
@@ -144,6 +145,37 @@ function validation(){
         },
         error: function (status, jqXHR, data) {
             alert('Fallo llamado ajax ' + data+jqXHR+status);
+        }
+    });
+}
+
+function authentication(){
+
+	var name = $("#nameInput").val()
+	var password = $("#passwordInput").val()
+    var email = $("#emailInput").val()
+	
+  	uri = "http://pescadores-colombia-api.herokuapp.com/user"
+    var authentication=  {     
+        name: name ,
+        password: password,
+        email: email
+    };
+
+
+    $.ajax({
+        url: uri,
+        type: "POST",
+        data: authentication,
+        success: function (data) {
+
+        
+        alert('Usuario registrado exitosamente!!, por favor ingrese con sus credenciales!');
+            $.mobile.changePage($("#login"));
+          
+        },
+        error: function (status, jqXHR, data) {
+            alert('Fallo el registro, por favor intente nuevamente ');
         }
     });
 }

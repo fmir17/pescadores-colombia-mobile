@@ -13,7 +13,7 @@ Spinner Lab's Development Team.
 
 // Functions
 function linkFacebook(){
-	alert("vinculando");
+//	alert("vinculando");
 		try {
 			FB.init({
 				appId : "653232568031668",	//Codigo aplicación en facebook.
@@ -28,7 +28,7 @@ function linkFacebook(){
 function facebookLogin() {
 FB.getLoginStatus(function(response) {
       if (response.status == 'connected') {
-        alert('CONECTADO ... :)');
+       // alert('CONECTADO ... :)');
 
         var uid = response.authResponse.userID;
         var accessToken = response.authResponse.accessToken;
