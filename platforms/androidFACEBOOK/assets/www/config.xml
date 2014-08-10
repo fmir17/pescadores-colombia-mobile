@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.spinnerlabs.pescadorescolombia" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Pescadores Colombia</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="html/home.html" />
+
+    <access origin="https://m.facebook.com" subdomains="true"/>
+    <access origin="https://graph.facebook.com" subdomains="true"/>
+    <access origin="https://api.facebook.com" subdomains="true"/>
+    <access origin="https://*.fbcdn.net" subdomains="true"/>
+    <access origin="https://*.akamaihd.net" subdomains="true"/>
+
+    <feature name="org.apache.cordova.facebook.Connect">
+        <param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
+    </feature>
+
+</widget>

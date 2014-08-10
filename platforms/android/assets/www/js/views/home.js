@@ -11,7 +11,7 @@ Spinner Lab's Development Team.
 */
 
 // Local Variables
-var bannerResources = "http://pescadores-colombia-api.spinnerlabs.co/image";
+var bannerResources = "http://pescadores-colombia-api.herokuapp.com/image";
 
 // Functions
 // This function is called when de page is loading. It's in charge of initializing the setting of the ajax called, the slider and the main properties of the page.
@@ -107,4 +107,79 @@ function initializeSliderProperties(){
 			tickerHover: false
 		});
 	});
+}
+
+function validation(){
+
+	var name = $("#name").val()
+	var password = $("#password").val()
+	
+  	uri = "http://pescadores-colombia-api.herokuapp.com/user/validation"
+    var validation=  {     
+        name: name ,
+        password: password,
+    };
+
+
+    $.ajax({
+        url: uri,
+        type: "POST",
+        data: validation,
+        success: function (data) {
+
+            var answer = data.answer;            
+            
+            if(answer == "true"){
+            window.localStorage.clear();
+            window.localStorage.setItem("user",name);
+            var userName = window.localStorage.getItem("user");
+            window.location.href = "login.html";
+          
+            }else{
+              
+          	  window.alert("Usuario y contraseña invalidos");
+          	  window.location.href = "home.html";
+
+            }
+
+        },
+        error: function (status, jqXHR, data) {
+            alert('Fallo llamado ajax ' + data+jqXHR+status);
+        }
+    });
+}
+
+function authenticatio(){
+	window.alert("entre");
+	}
+
+function authentication(){
+
+	var name = $("#nameInput").val()
+	var password = $("#passwordInput").val()
+    var email = $("#emailInput").val()
+	
+  	uri = "http://pescadores-colombia-api.herokuapp.com/user"
+    var authentication=  {     
+        name: name ,
+        password: password,
+        email: email
+    };
+
+
+    $.ajax({
+        url: uri,
+        type: "POST",
+        data: authentication,
+        success: function (data) {
+
+        
+        alert('Usuario registrado exitosamente!!, por favor ingrese con sus credenciales!');
+            $.mobile.changePage($("#login"));
+          
+        },
+        error: function (status, jqXHR, data) {
+            alert('Fallo el registro, por favor intente nuevamente ');
+        }
+    });
 }

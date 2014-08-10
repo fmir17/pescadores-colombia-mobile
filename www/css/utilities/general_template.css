@@ -3,8 +3,20 @@
 	width: 	100%;
 }
 
-.ui-grid-a .ui-block-a { width:30% !important;}
-.ui-grid-a .ui-block-b { width:70% !important;}
+.ui-grid-a .ui-block-a { 
+	width:30% !important;
+	color: #000000;
+	padding: 3px;
+	font-family: arial;
+	font-weight: bold;
+
+
+}
+
+.ui-grid-a .ui-block-b { 
+	width:70% !important;
+
+}
 
 .header, .content, .footer{
 	width: 100% !important;
@@ -20,6 +32,10 @@
 	background-image: -o-linear-gradient(bottom, #F0FFFF 0%, #ADD8E6 100%);
 }
 
+.textHeader{
+	text-align: right; !important;
+	vertical-align:center !important;;	
+}
 .content{
 	height: 70% !important;
 	padding: 0 !important;

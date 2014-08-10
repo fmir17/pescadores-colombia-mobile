@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<!-- Properties -->
+		<title>Pescadores Colombia - MyFishinglogs</title>
+        <meta charset="UTF-8">
+        <!-- Scale 1 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Styles -->
+		<link rel = "stylesheet" href = "../css/utilities/general_template.css">
+		<link rel = "stylesheet" href = "../css/utilities/general_utilities.css">
+		<link rel = "stylesheet" href="../css/frameworks/jquery.mobile-1.4.2.css">
+		<link rel = "stylesheet" href = "../css/views/myfishinglog.css">
+
+		<!-- Scripts -->
+		<script type="text/javascript" src = "../js/frameworks/cordova-1.6.1.js"></script>
+		<script type="text/javascript" src = "../js/frameworks/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src = "../js/frameworks/jquery.mobile-1.4.2.js"></script>
+		<script type="text/javascript" src = "../js/utilities/general_utilities.js"></script>
+		<script type="text/javascript" src = "../js/views/myfishinglog.js"></script>
+
+
+		</head>
+			<body onload="readFishinglog()">
+			<section data-role="page" id="myfishinglog">
+
+				<!--header -->
+				<header data-role="header" class = "header"> &nbsp;
+					<h1 class="ui-title">Mis Bitácoras</h1>	
+					<img id="photo" class="ui-btn-left">
+							
+	                <a data-role="button" data-icon="back" class="ui-btn-left" data-iconpos="notext" href="login.html" rel="external"></a>
+
+				</header>
+				<section id="body-section" class="body-section">
+					<div id = "myfishinglogs">
+						
+					</div>
+
+				</section>
+				
+
+				
+			</body>
+</html>

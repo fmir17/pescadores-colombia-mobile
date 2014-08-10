@@ -25,3 +25,18 @@ font-family:Comic Sans MS;
   text-align:right;
 }
 
+
+.detail{
+   padding: 2% 2% 2% 2%;
+  color: black;
+  font-size:15px;
+  font-weight:normal;
+  font-style:normal;
+ font-family:Comic Sans MS;
+  background-color: white;
+  border:2px solid;
+  border-radius:10px;
+  border-color:#DCDCDC;
+  box-shadow: 5px 5px 1px #E6E6FA;
+  text-align:justify;
+}

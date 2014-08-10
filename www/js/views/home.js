@@ -114,6 +114,18 @@ function validation(){
 	var name = $("#name").val()
 	var password = $("#password").val()
 	
+	if( name == null || name.length == 0 || /^\s+$/.test(name) ) {
+		alert("Debe ingresar un usuario!");
+		$("#name").focus();
+	  return false;
+	}		
+
+	if( password == null || password.length == 0 || /^\s+$/.test(password) ) {
+		alert("Debe ingresar una contraseña!");
+		$("#password").focus();
+  		return false;
+	}
+
   	uri = "http://pescadores-colombia-api.herokuapp.com/user/validation"
     var validation=  {     
         name: name ,
@@ -154,6 +166,37 @@ function authentication(){
 	var name = $("#nameInput").val()
 	var password = $("#passwordInput").val()
     var email = $("#emailInput").val()
+
+
+	if( name == null || name.length == 0 || /^\s+$/.test(name) ) {
+		alert("Debe ingresar un usuario!");
+		$("#name").focus();
+	  return false;
+	}		
+
+	if( password == null || password.length == 0 || /^\s+$/.test(password) ) {
+		alert("Debe ingresar una contraseña!");
+		$("#password").focus();
+  		return false;
+	}
+
+	if( email == null || email.length == 0 || /^\s+$/.test(email) ) {
+		alert("Debe ingresar un correo electronico!");
+		$("#password").focus();
+  		return false;
+	}
+	
+	expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	if( !expr.test(email)  ) {
+		alert("Debe ingresar un correo electronico válido!");
+  		return false;
+	}
+
+	if( password.length<5 ) {
+		alert("La contraseña debe ser mínimo de 6 caracteres!");
+  		return false;
+	}
+
 	
   	uri = "http://pescadores-colombia-api.herokuapp.com/user"
     var authentication=  {     

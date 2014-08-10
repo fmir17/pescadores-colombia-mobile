@@ -91,9 +91,17 @@ function buildMessage(author, date, message)
 
 function post(){
 
+
+
     var author = String(window.localStorage.getItem("user"));
     var message = $('#newComment').val();
     var date = new Date();
+
+    if( message == null || message.length == 0 || /^\s+$/.test(message) ) {
+        alert("El comentario está vacio");
+        $("#newComment").focus();
+      return false;
+    }   
 
     var messageBody = {author: author, body: message};
     var uri = "http://pescadores-colombia-api.herokuapp.com/wall";

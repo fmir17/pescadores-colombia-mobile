@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Properties -->
+        <meta charset="UTF-8">
+        <title>Pescadores Colombia - Inicio</title>
+
+        <!-- Styles -->
+        <link rel = "stylesheet" href = "../css/views/home.css">
+        <link rel = "stylesheet" href = "../css/utilities/general_utilities.css">
+        <link rel = "stylesheet" href = "../css/utilities/general_template.css">
+        <link rel = "stylesheet" href = "../css/frameworks/jquery.mobile-1.4.2.css">
+        <link rel = "stylesheet" href = "../css/plugins/jquery.bxslider.css">
+
+        <!-- Scripts -->
+        <script type="text/javascript" src = "../js/frameworks/cordova-1.6.1.js"></script>
+        <script type="text/javascript" src = "../js/frameworks/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src = "../js/frameworks/jquery.mobile-1.4.2.js"></script>
+        <script type="text/javascript" src = "../js/views/home.js"></script>
+        <script type="text/javascript" src = "../js/utilities/general_utilities.js"></script>
+        <script type="text/javascript" src = "../js/plugins/jquery.bxslider.js"></script>
+
+    </head>
+    <body onload = 'initView()'>
+        <div data-role = "page" id = "content_Page" class = "content_page" >
+            <div data-role="header" class="header" id="header">
+                <img id = "main_logo" src="../images/logos/principal_logo_4.png">
+            </div>
+            <div data-role="content" class="content">
+                <article id="banner" class="banner" id = "banner">
+                    <ul id = "bxslider" class="bxslider"></ul>
+                </article>
+            </div>
+            <div data-role="footer" data-position="bottom" class = "footer" id = "footer">
+                <a href="login.html" data-role="button" data-transition="slideup" data-inline="true" class="fade_button" id = "login_button"  rel="external">Log In</a> 
+
+                <a href="signup.html" data-role="button" data-transition="slideup" data-inline="true" data-theme="g" class="fade_button" id = "signup_button" rel="external">Sign Up</a>
+
+                <a href="javascript:reload();" data-role="button" data-transition="slideup" data-inline="true" data-theme="g" class="fade_button" id = "try_again_button" rel="external">Try Again</a>
+            </div>
+        </div>
+    </body>
+</html>

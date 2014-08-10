@@ -27,17 +27,22 @@ function readFishinglog(){
     cache: false,
 
     success: function (data, status) {
-            $('#myfishinglogs').append("<ul data-role=\"listview\" class=\"ui-listview\">");
-
-
+      
             for(var fishinglogItem in data){
                 var title = data[fishinglogItem].title;
                 var place = data[fishinglogItem].place;
                 var date = data[fishinglogItem].date;
 
-                var new_fishinglog = buildList(title,place,date);
+               
                 
-                $('#myfishinglogs').append(new_fishinglog);
+                $('#fishinglogsList').append("<li>"
+                    + "<a data-theme=\"d\" id=\"1\"class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"   >"
+                    +"<h3>"+title+"</h3>"
+                    +"<p><b>Lugar: </b>"+place+",<b>"
+                    +" Fecha: </b>"+date
+                    +"</p></a></li>");
+
+
             }
             
 
@@ -48,22 +53,8 @@ function readFishinglog(){
             }
         });
     }
-function buildList(title,place,date)
-{
 
-    var fishinglogItem =
-    "<span>"+
-         "<div id = class = \"fishinglogItem\">" +
-        "<div class=\"title\"> <a href=\"fishinglogDetail.html\">"+title+"</a>"+"</div>" +
-        "<div class=\"place\"> " + "Lugar: "+ place+ ", " +date+"</a>"+"</div>" +
-        "</div>"+
-    "</span>";
-
-     return fishinglogItem;
-}
-
-
-function fishingLogDetail(userId,fishingLogId){
+function fishingLogDetail(userName,fishingLogId){
 
     var uri = "http://pescadores-colombia-api.herokuapp.com/fishinglog/"+userName+"/"+fishingLogId;
         $.ajax({
@@ -84,11 +75,18 @@ function fishingLogDetail(userId,fishingLogId){
                 var weight = data[0].weight;
                 var size = data[0].size;
                 var description = data[0].description;
-                var imageURL = data[0].imageURL;
-                var seasonId = data[0].seasonId;
-                var fishingpartners = data[0].fishingpartners;
-                alert(title+place+date+fish+bait+weight+size+description+
-                    imageURL+seasonId+fishingLogId);
+                //var imageURL = data[0].imageURL;
+                //var seasonId = data[0].seasonId;
+                //var fishingpartners = data[0].fishingpartners;
+                $.mobile.changePage($("#fishingLogDetail"));
+                $('#headerId').append(title);
+                $('#content').empty();
+                var contentFish =  buildFishingLogDetail(title,place,date,fish,bait,weight,size,description);
+                $('#content').append(contentFish);
+
+
+                
+
         },
 
         error: function (status) {
@@ -98,3 +96,35 @@ function fishingLogDetail(userId,fishingLogId){
 }
 
 
+
+$(document).on("click", "#fishinglogsList li" ,function (event) {
+    
+    var fishingLogId =($(this).find("h3").text());
+    var userName = window.localStorage.getItem("user");
+
+    fishingLogDetail(userName,fishingLogId);
+
+    //$('ul.art-vmenu li').attrib('id');
+});
+
+
+
+function buildFishingLogDetail(title,place,date,fish,bait,weight,size,description)
+{
+    var fishinglog = 
+    "<span>"+
+        "<div id = class = \"fishinlogContent\">" +
+            "<div class = \"detail\">"+
+                "<p><b>Lugar: </b>"+place+"</p>"+
+                "<p><b>Fecha: </b>"+date+"</p>"+
+                "<p><b>Pez: </b>"+fish+"</p>"+
+                "<p><b>Anzuelo: </b>"+bait+"</p>"+
+                "<p><b>Peso: </b>"+weight+"</p>"+
+                "<p><b>Tamaño: </b>"+size+"</p>"+
+                "<p><b>Descripcion: </b>"+description+"</p>"+
+            "</div>" +
+        "</div>"+
+     "</span>";
+
+     return fishinglog;
+}

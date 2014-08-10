@@ -1,0 +1,18 @@
+
+body{
+	 background: url("../img/backgound/principal_background.png") no-repeat center center fixed;
+    -webkit-background-size: 	cover;
+    -moz-background-size: 		cover;
+    background-size: 			cover;
+}
+/* Configuration made for show the application when the device is in the horizontal position. */
+@media only screen and (orientation: landscape) {
+
+}
+
+/* Configuration made for show the application when the device is in the vertical position. */
+@media only screen and (orientation: portrait) {
+
+}
+
+

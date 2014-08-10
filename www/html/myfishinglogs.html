@@ -24,7 +24,9 @@
 
 		</head>
 			<body onload="readFishinglog()">
-			<section data-role="page" id="myfishinglog">
+
+			 <!--Myfishinglog view-->
+			<div data-role="page" id="myfishinglog">
 
 				<!--header -->
 				<header data-role="header" class = "header"> &nbsp;
@@ -35,13 +37,36 @@
 
 				</header>
 				<section id="body-section" class="body-section">
-					<div id = "myfishinglogs">
-						
+	  			     	<div data-role="controlgroup">
+	  			     	<ul id="fishinglogsList"data-role="listview">
+
+						</ul>
 					</div>
 
 				</section>
 				
+			</div>
 
-				
+			<!--MyfishinglogDetail view-->
+			
+			    <div data-role="page" id="fishingLogDetail">
+			 
+			        <!--header -->
+			        <header data-role="header" class = "header"> &nbsp;
+			            <h1 id="headerId" class="ui-title"></h1>  
+			           
+			            <a data-role="button" data-icon="back" class="ui-btn-left" data-iconpos="notext" href="#myfishinglog"></a>
+
+			        </header>
+			        
+			        <div data-role="content" id="content">  
+
+			        </div>
+			         
+			    </div>
+
+
+		
 			</body>
+
 </html>

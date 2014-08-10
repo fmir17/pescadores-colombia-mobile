@@ -43,53 +43,56 @@
             -->
             <!--Contenido -->
             <section data-role="content" >
+                <form id"form" onsubmit="return saveFishinglog()" method="post">
                 <!-- Se divide en tres Secciones-->
                     <div class="ui-grid-a">
+                        <div class="ui-block-a" vertical-align="middle" >
+                        <span>Título:</span>
+                        </div>
+                        <div class="ui-block-b">
+                            <input type="text" id="titleInput"  placeholder="Dale un nombre a esa experiencia!"  />
+                        </div>
                         <div class="ui-block-a">
                             <strong>Lugar:</strong>
                         </div>
                         <div class="ui-block-b">
-                            <input type="text" id="placeInput" value="" placeholder="Lugar de la bitácora!"  />
+                            <input type="text" id="placeInput"  placeholder="¿Donde pasó?"  />
                         </div>
                         <div class="ui-block-a">
                             <strong>Especie:</strong>
                         </div>
                         <div class="ui-block-b">
-                            <input type="text" id="fishInput" value="" placeholder="¿Cuál especie encontraste?"  />
+                            <input type="text" id="fishInput"  placeholder="¿Cuál especie encontraste?"  />
                         </div>
                         <div class="ui-block-a">
                             <strong>Anzuelo:</strong>
                         </div>
                         <div class="ui-block-b">
-                            <input type="text" id="baitInput" value="" placeholder="¿Cuál fue tu anzuelo?"  />
+                            <input type="text" id="baitInput" placeholder="¿Cuál fue tu anzuelo?"  />
                         </div>
                         <div class="ui-block-a">
                             <strong>Peso:</strong>
                         </div>
                         <div class="ui-block-b">
-                            <input type="text" id="weightInput" value="" placeholder="¿Cuanto pesó?"  />
+                            <input type="number" id="weightInput" placeholder="¿Cuanto pesó? (g)"  />
                         </div>
                         <div class="ui-block-a">
                             <strong>Tamaño:</strong>
                         </div>
                         <div class="ui-block-b">
-                            <input type="text" id="sizeInput" value="" placeholder="¿Cuál era el tamaño?"  />
+                            <input type="number" value id="sizeInput" name="sizeInput" placeholder="¿Cuál era el tamaño? (cms)"  />
                         </div>
                         <div class="ui-block-a">
                             <strong class"label" >Descripción:</strong>
                         </div>
                         <div class="ui-block-b">
-                            <input type="text" id="descriptionInput" value=""placeholder="Describí tu experiencia!"  />
+                            <textarea id="descriptionInput" name="textarea" id="textarea" placeholder="Describí tu experiencia!"></textarea>
                         </div>
                     </div>
 
-            <form action="javascript:saveFishinglog();" method="post">
-                <INPUT class = "boton" type="submit" value="Guardar">
+            
+                <input class = "boton" type="submit" value="Guardar" id="save">
         
-            </form>
-            <form action="javascript:returnToWall();">
-                <INPUT data-role="button" type="submit" value="Cancelar">
- 
             </form>
             </section>
 			

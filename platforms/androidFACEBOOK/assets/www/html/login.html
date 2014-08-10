@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Properties -->
+		<meta charset="UTF-8">
+		<title>Pescadores Colombia - Log In</title>
+
+		<!-- Styles -->
+		<link rel = "stylesheet" href="../css/frameworks/jquery.mobile-1.4.2.css">
+		<link rel = "stylesheet" href = "../css/plugins/jquery.bxslider.css">
+		<link rel = "stylesheet" href = "../css/utilities/general_utilities.css">
+		<link rel = "stylesheet" href = "../css/utilities/general_template2.css">
+
+		<!-- Scripts -->
+		<script type="text/javascript" src = "../js/frameworks/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src = "../js/frameworks/jquery.mobile-1.4.2.js"></script>
+		<script type="text/javascript" src = "../cordova.js"></script>
+		<script type="text/javascript" src = "../js/frameworks/cordova-1.6.1.js"></script>
+
+		<script type="text/javascript" src = "../js/plugins/facebook-js-sdk.js"></script>
+
+		
+		<script type="text/javascript" src = "../js/plugins/cdv-plugin-fb-connect.js"></script>
+	
+		<script type="text/javascript" src = "../js/utilities/facebook_utilities.js"></script>
+		
+
+		<script type="text/javascript" src = "../js/utilities/general_utilities.js"></script>
+		<script type="text/javascript" src = "../js/views/login.js"></script>
+	</head>
+
+<body onload = "initSocialNetworks()">
+		<div data-role="page" id="login">
+
+			<div data-role="header"class = "header"> &nbsp;
+				<h1 class="ui-title">Log In</h1>
+			</div>
+			<a data-role="button" data-icon="back" class="ui-btn-left" data-iconpos="notext" href="home.html" rel="external"></a>
+
+			<div data-role="content" class = "content" >
+			<a data-role="button" data-transition="slideup" href="wall.html" rel="external">Ir a Muro</a>
+			</div>
+
+			<div data-role="content" class = "content" >
+			<a data-role="button" data-transition="slideup" href="fishinglog.html" rel="external">Registrar Bitácora</a>
+			</div>
+
+			<div data-role="content" class = "content" >
+			<a data-role="button" href="javascript:facebookLogin();">Iniciar Facebook</a>
+			</div>
+
+		</div>
+	</body>
+</html>

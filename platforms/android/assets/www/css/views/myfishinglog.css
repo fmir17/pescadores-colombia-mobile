@@ -1,0 +1,27 @@
+.date {
+  display:inline-block;
+  width: 96%;
+  font-family:Comic Sans MS;
+  text-decoration:none;
+}
+
+.title{
+  padding: 2% 2% 2% 2%;
+  color: black;
+  font-size:19px;
+  font-weight: bold;
+  font-style:normal;
+  text-align: center;
+  font-family:Comic Sans MS;
+
+}
+
+.place{
+
+  color: black;
+  font-size:13px;
+  font-style: italic;
+font-family:Comic Sans MS;
+  text-align:right;
+}
+

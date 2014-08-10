@@ -1,0 +1,102 @@
+/*
+---------------------------------------------------------------------------------------------------
+										CSS3 DOCUMENTATION
+---------------------------------------------------------------------------------------------------
+Description:
+This file contain the styles considered like common styles of the application.
+
+Author:
+Spinner Lab's Development Team.
+
+*/
+
+.fade_button{
+	display: none !important;
+}
+
+/* Loading Indicator Styles */
+#loadingIndicator{
+	border: 				2px solid #0088BC;
+	border-radius: 			10px;
+	position: 				absolute;
+	text-align: 			center;
+	background-color:  white;
+	overflow: 				hidden;
+}
+
+#logoLoading{
+	position: 				absolute;
+    float: 					right;
+	width: 					150%;
+	height: 				65%;
+    top: 					30%;
+
+    -webkit-animation: 	pez_nadando 5s infinite linear;
+    -moz-animation: 		pez_nadando 5s infinite linear;
+    animation: 				pez_nadando 5s infinite linear;
+}
+
+#loadingLabel{
+	width: 					90%;
+	height: 				15%;
+	font-size: 				20px;
+	font-weight: 			bold;
+	font-family: 			'Comic Sans MS';
+	border-radius: 			10px;
+	margin: 				5% auto;
+	color: 					white;
+	background-color: 		#0088BC;
+	line-height: 			150%;  /* Used for vertical alignment of the text.*/
+
+    -webkit-animation: 		fade 4000ms infinite;
+    -moz-animation: 		fade 4000ms infinite;
+    animation: 				fade 4000ms infinite;
+}
+
+/* Configuration made for show the application when the device is in the horizontal position. */
+@media only screen and (orientation: landscape) {
+	#loadingIndicator{
+		width: 				50%;
+		height: 			50%;
+		left: 				25%;
+		top: 				25%;
+		z-index: 			100;
+	}
+}
+
+/* Configuration made for show the application when the device is in the vertical position. */
+@media only screen and (orientation: portrait) {
+	#loadingIndicator{
+		width: 				70%;
+		height: 			30%;
+		left: 				15%;
+		top: 				35%;
+		z-index: 			100;
+	}
+}
+
+/* Animations */
+
+/* loadingLabel */
+@keyframes fade {
+    from 	{ opacity: 1.0; }
+    50% 	{ opacity: 0.4; }
+    to 	{ opacity: 1.0; }
+}
+
+@-webkit-keyframes fade {
+    from 	{ opacity: 1.0; }
+    50% 	{ opacity: 0.4; }
+    to 	{ opacity: 1.0; }
+}
+
+/* logoLoading */
+@-webkit-keyframes pez_nadando {
+    0% 		{left:-150%;}
+    100% 	{left:150%;}
+}
+
+@keyframes pez_nadando {
+    0%  		{left:-150%;}
+    100% 	{left:150%;}
+}

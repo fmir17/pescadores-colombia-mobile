@@ -1,0 +1,52 @@
+.comment {
+  display:inline-block;
+  width: 96%;
+
+  padding: 2% 2% 2% 2%;
+  margin: 0% 0% 0% 0%;
+
+  font-family:Comic Sans MS;
+  text-decoration:none;
+}
+
+.author{
+  padding: 4% 2% 4% 4%;
+  color: black;
+  font-size:15px;
+  font-weight: bold;
+  font-style:normal;
+  text-align: center;
+}
+
+.date{
+  padding: 1% 1% 1% 1%;
+  color: black;
+  font-size:12px;
+  font-weight:normal;
+  font-style: italic;
+
+  background-color: white;
+
+  text-align:right;
+}
+
+.message{
+  padding: 2% 2% 2% 2%;
+  color: black;
+  font-size:15px;
+  font-weight:normal;
+  font-style:normal;
+
+  background-color: white;
+  border:2px solid;
+  border-radius:10px;
+  border-color:#DCDCDC;
+  box-shadow: 5px 5px 1px #E6E6FA;
+  text-align:justify;
+
+}
+
+#body-section{
+  overflow: auto;
+}
+

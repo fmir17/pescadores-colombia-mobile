@@ -1,5 +1,6 @@
 function saveFishinglog()
 {
+    
     var place = $('#placeInput').val();
     var fish = $('#fishInput').val();
     var bait = $('#baitInput').val();
@@ -7,8 +8,10 @@ function saveFishinglog()
     var size = $('#sizeInput').val();
     var description = $('#descriptionInput').val();
     var imageURL = $('#imageURLInput').val();
-    var userId = $('#nombreUsuario').text();
-    var fishigpartners = $('#fishigpartnersInput').val();
+    
+    var userName = String(window.localStorage.getItem("user"));
+    
+    //var fishigpartners = $('#fishigpartnersInput').val();
 
     var fishinglog=  {     
         place: place,
@@ -18,9 +21,10 @@ function saveFishinglog()
         size: size,
         description: description,
         imageURL: imageURL,
-        userId: 'jennifer',
+        userId: userName,
         seasonId: 'jennifer'
     };
+    
     var uri = "http://pescadores-colombia-api.herokuapp.com/fishinglog";
 
     $.ajax({
@@ -43,5 +47,4 @@ function saveFishinglog()
 function returnToWall() {
     document.location.href = "login.html";
 }
-
 

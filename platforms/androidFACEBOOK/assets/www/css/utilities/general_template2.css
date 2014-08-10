@@ -1,0 +1,28 @@
+.content_page{
+	height: 	100%;
+	width: 	100%;
+}
+
+.header, .content, .footer{
+	width: 100% !important;
+	text-align: center;
+}
+
+.header {
+	height: 10% !important;
+
+	background-image: linear-gradient(bottom, #F0FFFF 0%, #ADD8E6 100%);
+	background-image: -webkit-linear-gradient(bottom, #F0FFFF 0%, #ADD8E6 100%);
+	background-image: -moz-linear-gradient(bottom, #F0FFFF 0%, #ADD8E6 100%);
+	background-image: -o-linear-gradient(bottom, #F0FFFF 0%, #ADD8E6 100%);
+}
+
+.content{
+	height: 84% !important;
+	padding: 0 !important;
+}
+
+.footer{
+	height: 5% !important;
+}
+

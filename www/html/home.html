@@ -40,7 +40,7 @@
             </div>
         </div>
 
-
+    <!--Login page-->
     <div data-role="page" id="login">
  
         <!--header -->
@@ -52,7 +52,7 @@
         </header>
         
         <div data-role="content">   
-            <form id="formulario"  method="post" onsubmit="validation()">
+            <form id="formulario" name="    " method="post" onsubmit="return validation()">
           
                     <label> Usuario </label>
                     <input type="text" id="name" name="name">
@@ -66,7 +66,9 @@
          
     </div>
 
+    <!--Signup page-->
     <div data-role="page" id="signup">
+        <form action="" name="authenticationForm" method="post" onsubmit ="return authentication()">
             <div data-role="header"class = "header"> &nbsp;
                 <h1 class="ui-title">Crea tu cuenta!</h1>               
             </div>
@@ -74,30 +76,30 @@
 
             <div data-role="content" >
                 
-
+            
                 <div class="ui-grid-a">
                         <div class="ui-block-a">
                             <strong>Nombre:</strong>
                         </div>
                         <div class="ui-block-b">
-                            <input type="text" id="nameInput" value="" placeholder="¿Cómo te llamas?!"  />
+                            <input type="text" name="nameInput" id="nameInput" value="" placeholder="¿Cómo te llamas?!"  autofocus/>
                         </div>
                         <div class="ui-block-a">
                             <strong>Email:</strong>
                         </div>
                         <div class="ui-block-b">
-                            <input type="text" id="emailInput" value="" placeholder="¿Cuál es tu correo?"  />
+                            <input type="text" name="emailInput" id="emailInput" value="" placeholder="¿Cuál es tu correo?"   />
                         </div>
                         <div class="ui-block-a">
                             <strong>Password:</strong>
                         </div>
                         <div class="ui-block-b">
-                            <input type="password" id="passwordInput" value="" placeholder="Escribí tu contraseña!"  />
+                            <input type="password" name="passwordInput" id="passwordInput" value="" placeholder="Escribí tu contraseña!"  />
                         </div>
                 </div>
 
-                <form action="javascript:authentication();" method="post">
-                <input type="submit" value="Registrar" id="botonLogin">
+                <input type="submit" value="Registrar" id="botonSignup">
+
                 </form>
 
             </div>
